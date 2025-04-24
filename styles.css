@@ -1,0 +1,321 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: rgb(35, 35, 35);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    justify-content: center;
+
+}
+
+header {
+    background: linear-gradient(rgb(17, 16, 16), #d01238);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+/* Animation styles */
+.loading-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .logo-animation {
+    font-size: 25rem;
+    font-weight: bold;
+  }
+  
+  .red-text {
+    color: #8f0d27;
+    display: inline-block;
+  }
+  
+  .iva-text {
+    color: #716a6a;
+    display: inline-block;
+  }
+  
+  /* Animation keyframes */
+  @keyframes moveRed {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100px); opacity: 0; }
+
+  }
+  
+  @keyframes moveIva {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(100px); opacity: 0; }
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+  }
+  /* Animation for appearing text */
+.container-new {
+  opacity: 0; /* Start invisible */
+  font-size: 6em;
+}
+
+.container-new h2.section-title {
+  color: #d01238; /* Red color */
+  animation:  fadeInText 1s ease forwards;
+  animation-delay: 2s; /* Start animation after 2 seconds */
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#HireUs {
+    color: white;
+    background-color: #d01238;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    position: relative;
+    bottom: -15px;
+    right: -45%;
+    align-items: center;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    border: none;
+}
+
+#HireUs:hover {
+    background-color: #b0102f;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.container-header{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 7rem;
+    display: flex;
+    justify-content: center;
+}
+.tagline-container {
+    position: relative;
+    min-height: 140px;
+}
+  
+.tagline {
+    font-size: 50px;
+    opacity: 0.9;
+    text-align: center;
+    margin-inline: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid;
+    animation:
+    typing 4s steps(31) forwards ,
+    blink 1s step-end infinite;
+}
+@keyframes typing{
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes  blink{
+    50% { border-color: transparent; }
+}
+.tagline.complete {
+    border-right: none;
+}
+.text{
+    text-align: Left;
+    margin-bottom: 2rem;
+    color: rgb(255, 255, 255);
+    position: relative;
+    
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+.container-leader {
+    margin: 0 auto;
+    max-width: 1200px;
+    place-items: center;
+    padding: 2rem 1rem;
+}
+
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: gold;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: gold;
+    margin: 0.5rem auto;
+}
+/* Team Leader section */
+.team-leader-card {
+    border-radius: 10px;
+    background: #00071070;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
+}
+.team-leader-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgb(3, 0, 0);
+}
+
+/* Team section */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.team-card {
+    border-radius: 10px;
+    background: #00071070;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgb(3, 0, 0);
+}
+
+.member-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.member-info {
+    padding: 1.5rem;
+}
+
+.member-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: silver;
+}
+
+.member-role {
+    color: teal;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.member-position{
+    color:rgb(109, 109, 109);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.member-bio {
+    font-size: 0.9rem;
+    color: teal;
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.social-link {
+    color: #4361ee;
+    text-decoration: none;
+    padding: 0.3rem;
+}
+
+.social-link:hover {
+    color: #3a0ca3;
+}
+.social-icon {
+    width: 24px;  /* Adjust size as needed */
+    height: 24px;
+    vertical-align: middle;
+}
+
+/* You might need to adjust your social-link styling */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(#d01238,rgb(17, 16, 16));
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin: 1rem 0;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
