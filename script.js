@@ -1,24 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Wait for 1 second to show the logo
-  const backgroundMusic = document.getElementById('backgroundMusic');
-  
-  // Set volume and try to play
-  backgroundMusic.volume = 1.0;
   
   // Fix the audio source if needed
   // If the file is in the same directory as index.html
-  const audioSource = backgroundMusic.querySelector('source');
-  audioSource.type = 'audio/wav'; // Correct MIME type
-  
-  // Handle autoplay restrictions
-  backgroundMusic.play().catch(function(error) {
-    console.log("Audio autoplay prevented: ", error);
-    // Add a button or enable play on first interaction
-    document.addEventListener('click', function() {
-      backgroundMusic.play();
-    }, {once: true});
-  });
-  
   setTimeout(function() {
     // Get animation elements
     const redText = document.querySelector('.red-text');
