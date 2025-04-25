@@ -22,6 +22,7 @@ header {
     text-align: center;
 }
 /* Animation styles */
+/* Animation styles */
 .loading-animation {
     position: fixed;
     top: 0;
@@ -36,8 +37,9 @@ header {
   }
   
   .logo-animation {
-    font-size: 25rem;
+    font-size: 15vw; /* Changed from fixed to viewport width units */
     font-weight: bold;
+    text-align: center;
   }
   
   .red-text {
@@ -53,39 +55,59 @@ header {
   /* Animation keyframes */
   @keyframes moveRed {
     0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-100px); opacity: 0; }
-
+    100% { transform: translateY(-5vh); opacity: 0; } /* Using vh instead of fixed pixels */
   }
   
   @keyframes moveIva {
     0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(5vh); opacity: 0; } /* Using vh instead of fixed pixels */
   }
   
   @keyframes fadeIn {
     0% { opacity: 1; }
     100% { opacity: 0; visibility: hidden; }
   }
-  /* Animation for appearing text */
-
-.container-new h2.section-title {
-  color: #d01238; /* Red color */
-  opacity: 0; /* Start invisible */
-  font-size: 6em;
-  animation: fadeInContainer 3s ease forwards;
-  animation-delay: 1.7s;
-}
   
-@keyframes fadeInContainer {
-  0% {
+  /* Animation for appearing text */
+  .container-new h2.section-title {
+    color: #d01238;
     opacity: 0;
-    transform: translateY(20px);
+    font-size: 6vw; /* Changed from em to vw */
+    animation: fadeInContainer 3s ease forwards;
+    animation-delay: 1.7s;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  
+  @keyframes fadeInContainer {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-}
+  
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: 768px) {
+    .logo-animation {
+      font-size: 20vw; /* Larger on small screens */
+    }
+    
+    .container-new h2.section-title {
+      font-size: 8vw;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .logo-animation {
+      font-size: 25vw; /* Even larger on very small screens */
+    }
+    
+    .container-new h2.section-title {
+      font-size: 10vw;
+    }
+  }
 #HireUs {
     color: white;
     background-color: #d01238;
