@@ -22,7 +22,6 @@ header {
     text-align: center;
 }
 /* Animation styles */
-/* Animation styles */
 .loading-animation {
     position: fixed;
     top: 0;
@@ -108,66 +107,148 @@ header {
       font-size: 10vw;
     }
   }
-#HireUs {
-    color: white;
-    background-color: #d01238;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    position: relative;
-    bottom: -15px;
-    right: -45%;
-    align-items: center;
-    display: inline-block;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  .hire-us-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
     cursor: pointer;
-    border: none;
-}
-
-#HireUs:hover {
-    background-color: #b0102f;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.container-header{
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 7rem;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    text-decoration: none;
+  }
+  
+  .hire-us-button:hover {
+    transform: scale(1.25);
+  }
+  
+  .outer-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(red 0%, darkRed 50%, rgb(42, 22, 22) 100%);
     display: flex;
     justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 12px rgba(25, 4, 4, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .hire-us-button:hover .outer-circle {
+    box-shadow: 0 10px 20px rgba(34, 30, 30, 0.25);
+  }
+  
+  .inner-circle {
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background-color: rgb(20, 17, 17);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hire-text {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #de1616;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    text-decoration: none;
+  }
+  
+  .us-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d40f0f;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    text-decoration: none;
+  }
+  
+/* Header Container */
+.container-header {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: clamp(2rem, 5vw, 7rem); /* Responsive padding */
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* Stack elements on small screens */
 }
+
+/* Tagline Container */
 .tagline-container {
     position: relative;
-    min-height: 140px;
+    min-height: 80px; /* Reduced from 140px for better mobile display */
+    width: 100%;
+    overflow: hidden;
 }
-  
+
+/* Tagline Text */
 .tagline {
     color: darkgray;
-    font-size: 50px;
+    font-size: clamp(1.5rem, 5vw, 50px); /* Responsive font size */
     opacity: 0.9;
     text-align: center;
     margin-inline: auto;
     overflow: hidden;
     white-space: nowrap;
+    width: 0;
     border-right: 3px solid;
-    animation: delay 3s step-end forwards,
-    typing 3s steps(31) forwards 2s,
-    blink 1s step-end infinite;
+    animation: delay 5s step-end forwards,
+        typing 3s steps(31) forwards 2s,
+        blink 1s step-end infinite;
 }
-@keyframes typing{
+
+@keyframes typing {
     from { width: 0; }
     to { width: 100%; }
 }
-@keyframes  blink{
+
+@keyframes blink {
     50% { border-color: transparent; }
 }
+
 .tagline.complete {
     border-right: none;
+}
+
+/* Media queries for different screen sizes */
+@media screen and (max-width: 768px) {
+    .tagline {
+        font-size: clamp(1.2rem, 4vw, 2rem);
+    }
+    
+    .tagline-container {
+        min-height: 60px;
+    }
+    
+    #HireUs {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container-header {
+        padding: 1.5rem;
+    }
+    
+    .tagline {
+        white-space: normal; /* Allow text to wrap on very small screens */
+        height: auto;
+        animation: none; /* Disable typing animation on very small screens */
+        width: 100%;
+        border-right: none;
+    }
+    
+    .tagline-container {
+        min-height: auto;
+    }
 }
 .text{
     text-align: Left;
